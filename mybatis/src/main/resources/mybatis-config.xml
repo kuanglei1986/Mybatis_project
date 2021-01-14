@@ -5,6 +5,13 @@
     <!--引入外部的数据库配置文件-->
     <properties resource="jdbc.properties"></properties>
 
+    <!--实体类取别名-->
+    <typeAliases>
+        <!--直接给所有的实体类取别名。默认的实体类的别名就是类名(不区分小大写)
+            User实体类：User、user、USER
+        -->
+        <package name="com.bruceliu.bean"/>
+    </typeAliases>
 
     <!--配置MyBatis连接数据库-->
     <!--开发环境-->

@@ -21,4 +21,17 @@
         INSERT INTO user VALUES (null,#{username},#{birthday},#{sex},#{address})
     </insert>
 
+    <!--根据ID查询 查询返回值要写  参数可以忽略-->
+    <select id="getById" resultType="com.bruceliu.bean.User" parameterType="int">
+       select * from  user where id=#{id}
+    </select>
+
+    <!-- 增删改不需要人工定义int返回值-->
+    <update id="updateUserById" parameterType="user">
+        update user set username=#{username},birthday=#{birthday},sex=#{sex},address=#{address} where id=#{id}
+    </update>
+
+
+
+
 </mapper>
