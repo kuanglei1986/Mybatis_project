@@ -1,0 +1,11 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--<bean id="accountDao" class="cn.xh.dao.impl.AccountDaoImpl" scope="prototype"></bean>-->
+
+    <!--<bean id="accountDao" class="cn.xh.factory.StaticFactory" factory-method="createAccountDao"/>-->
+    <bean id="instanceFactory" class="cn.xh.factory.InstanceFactory"/>
+    <bean id="accountDao" factory-bean="instanceFactory" factory-method="createAccountDao" scope="prototype"/>
+
+</beans>

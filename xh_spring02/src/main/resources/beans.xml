@@ -1,0 +1,53 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+constructor-arg
+属性：
+index:指定参数在构造函数参数列表的索引位置
+type:指定参数在构造函数中的数据类型
+name:指定参数在构造函数中的名称 用这个找给谁赋值
+=======上面三个都是找给谁赋值，下面两个指的是赋什么值的==============
+value:它能赋的值是基本数据类型和 String 类型
+ref:它能赋的值是其他 bean 类型，也就是说，必须得是在配置文件中配置过的 bean
+
+ -->
+<!--    <bean id="car" class="cn.xh.Demo01.Car">-->
+<!--        <constructor-arg name="brand" value="奔驰"></constructor-arg>-->
+<!--        <constructor-arg name="price" value="180000"></constructor-arg>-->
+<!--    </bean>-->
+
+<!--    <bean id="person" class="cn.xh.Demo01.Person">-->
+<!--    <constructor-arg name="name" value="张三"></constructor-arg>-->
+<!--    <constructor-arg name="car" ref="car"></constructor-arg>-->
+<!--    </bean>-->
+    <bean id="collections" class="cn.xh.Demo01.Collections">
+        <property name="str">
+            <list>
+                <value>北京</value>
+                <value>上海</value>
+            </list>
+        </property>
+        <property name="list">
+            <list>
+                <value>北京</value>
+                <value>上海</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="张三"></entry>
+                <entry key="2" value="李四"></entry>
+            </map>
+
+        </property>
+        <property name="prop">
+            <map>
+                <entry key="1" value="张三"></entry>
+                <entry key="2" value="李四"></entry>
+            </map>
+        </property>
+    </bean>
+
+</beans>
